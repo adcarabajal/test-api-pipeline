@@ -1,29 +1,44 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>group</groupId>
-    <artifactId>libraries</artifactId>
-    <version>3.8-R50-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>test pom</name>
-
-    <profiles>
-         <profile>
-            <id>3.8.3</id>
-            <properties>
-                <version.base>3.8.3</version.base>
-                <extension.module>3.8.x</extension.module>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <modules>
-                <module>common</module>
-                <module>mule-agent-cloudhub-extensions</module>
-                <module>mmc-extensions</module>
-                <module>mule-extensions</module>
-                <module>it</module>
-            </modules>
-        </profile>
-    </profiles>
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>group</groupId>
+  <artifactId>libraries</artifactId>
+  <version>3.8-R50-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>test pom</name>
+  <profiles>
+    <profile>
+      <id>3.8.3</id>
+      <properties>
+        <version.base>3.8.3</version.base>
+        <extension.module>3.8.x</extension.module>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <modules>
+        <module>common</module>
+        <module>mule-agent-cloudhub-extensions</module>
+        <module>mmc-extensions</module>
+        <module>mule-extensions</module>
+        <module>it</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>4.0.0</id>
+      <properties>
+        <properties>
+          <mule.version.base>3.8.0</mule.version.base>
+          <mule.version>${mule.version.base}</mule.version>
+        </properties>
+      </properties>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <modules>
+        <module>common</module>
+        <module>agent</module>
+      </modules>
+    </profile>
+  </profiles>
 </project>
